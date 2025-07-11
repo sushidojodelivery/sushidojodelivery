@@ -1,115 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sushi Dojo Delivery</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Hokkai Delivery - Culinária Japonesa</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'SEU_ID_PIXEL'); 
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=SEU_ID_PIXEL&ev=PageView&noscript=1"/>
-  </noscript>
 </head>
 <body class="bg-white text-gray-800">
 
   <!-- HEADER -->
-  <header class="flex items-center justify-between p-4 shadow-md bg-white">
-    <img src="logo.png" alt="Sushi Dojo Logo" class="h-10">
-    <a href="#pedido" class="bg-red-600 text-white px-4 py-2 rounded-md">Comprar Agora</a>
+  <header class="p-4 text-center bg-gray-100">
+    <h1 class="text-2xl font-bold">Hokkai Delivery - Culinária Japonesa</h1>
+    <p>Entrega grátis • Pedido mínimo R$13 • 25‑40 min</p>
+    <p>4,8 ⭐ (1.589 avaliações)</p>
+    <div class="mt-2 font-semibold text-red-600">Aproveite: compre qualquer combo e ganhe um Temaki</div>
   </header>
 
-  <!-- HERO -->
-  <section class="text-center p-6">
-    <img src="sushi-banner.jpg" alt="Banner Sushi" class="rounded-lg shadow-lg mx-auto mb-4 max-w-md">
-    <h1 class="text-2xl font-bold mb-2">Sushi Fresco Entregue na Sua Casa</h1>
-    <p class="mb-4">Receba em até 30 minutos, direto do chef para sua mesa.</p>
-    <a href="#pedido" class="bg-green-500 text-white px-6 py-2 rounded-full text-lg">Ver Cardápio</a>
+  <!-- PROMOÇÃO COM CONTAGEM -->
+  <section class="p-6 text-center">
+    <h2 class="text-xl font-bold mb-2">Promoção quase esgotada!</h2>
+    <div id="timer" class="text-3xl font-mono mb-4">13:23</div>
   </section>
 
-  <!-- CARDÁPIO -->
-  <section class="p-6 bg-gray-50">
-    <h2 class="text-xl font-semibold mb-4">Cardápio Popular</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="bg-white p-4 rounded shadow">
-        <img src="combinado2.jpg" alt="Combinado" class="w-full rounded mb-2">
-        <h3 class="font-semibold">Combinado 40 Peças</h3>
-        <p class="text-sm mb-2">Promoção do dia com entrega grátis!</p>
-        <button onclick="abrirCheckout('Combinado 40 Peças')" class="bg-red-500 text-white px-4 py-2 rounded">Comprar</button>
+  <!-- DESTAQUES -->
+  <section class="p-6">
+    <h2 class="text-xl font-semibold mb-4">Destaques — Quase Esgotado!</h2>
+    <div class="grid grid-cols-1 gap-4">
+      <div class="p-4 bg-white rounded shadow">
+        <h3 class="font-semibold">Combo Kumo — 24 peças</h3>
+        <p>Sashimi, Nigiri e Uramaki de salmão e atum – de R$59,80 por <strong>R$29,90</strong></p>
+      </div>
+      <div class="p-4 bg-white rounded shadow">
+        <h3 class="font-semibold">Combo Takashi — 32 peças (entrega grátis)</h3>
+        <p>Variados sashimis e uramakis – de R$79,80 por <strong>R$39,90</strong></p>
+      </div>
+      <div class="p-4 bg-white rounded shadow">
+        <h3 class="font-semibold">Combo Hikari — 78 peças (mais vendido)</h3>
+        <p>Seleção premium de sashimi, nigiri e uramaki – de R$149,80 por <strong>R$59,90</strong></p>
       </div>
     </div>
   </section>
 
-  <!-- CHECKOUT -->
-  <section id="checkout" class="hidden p-6">
-    <h2 class="text-xl font-bold mb-4">Finalizar Pedido</h2>
-    <form onsubmit="enviarPedido(); return false;" class="grid gap-4 max-w-md mx-auto">
-      <input type="text" id="produto" class="hidden">
-      <input type="text" id="nome" placeholder="Seu nome" required class="border p-2 rounded">
-      <input type="text" id="endereco" placeholder="Endereço de entrega" required class="border p-2 rounded">
-      <input type="text" id="telefone" placeholder="Telefone para contato" required class="border p-2 rounded">
-      <select id="pagamento" required class="border p-2 rounded">
-        <option value="">Forma de pagamento</option>
-        <option value="Pix">Pix</option>
-        <option value="Dinheiro">Dinheiro</option>
-        <option value="Cartão">Cartão</option>
-      </select>
-      <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Confirmar Pedido</button>
-    </form>
+  <!-- COMBINADOS ESPECIAIS -->
+  <section class="p-6 bg-gray-50">
+    <h2 class="text-xl font-semibold mb-4">Combinados Especiais</h2>
+    <ul class="space-y-3 list-disc list-inside">
+      <li><strong>Senshi — 28 peças</strong> por R$149,90</li>
+      <li><strong>Bushido — 48 peças</strong> por R$219,90</li>
+      <li><strong>Imperador — 50 peças</strong> por R$319,90</li>
+    </ul>
   </section>
 
-  <!-- RESULTADO DO PEDIDO -->
-  <section id="resumo" class="hidden p-6 bg-green-50 text-center">
-    <h2 class="text-xl font-bold mb-2">Pedido Recebido com Sucesso! 🍣</h2>
-    <p class="mb-2">Faça o pagamento via <strong>PIX</strong> para:</p>
-    <div class="text-lg font-mono bg-white border rounded p-2 inline-block mb-2">sushidojodelivery</div>
-    <p class="text-sm text-gray-600">Após o pagamento, seu pedido será preparado.</p>
+  <!-- YAKISOBAS -->
+  <section class="p-6">
+    <h2 class="text-xl font-semibold mb-4">Yakisobas</h2>
+    <ul class="space-y-2 list-disc list-inside">
+      <li>Macarrão Frito – R$14,90</li>
+      <li>Yakisoba Vegetariano – R$74,90</li>
+      <li>Yakisoba Camarão – R$89,90</li>
+      <li>Yakisoba Especial – R$84,90</li>
+      <li>Yakisoba Mignon – R$89,90</li>
+      <li>Yakisoba Lula – R$82,90</li>
+      <li>Yakisoba Misto – R$82,90</li>
+    </ul>
   </section>
 
-  <!-- CTA FINAL -->
-  <section id="pedido" class="p-6 text-center bg-red-600 text-white">
-    <h2 class="text-xl font-bold mb-2">Promoção válida por tempo limitado</h2>
-    <p class="mb-4">Clique abaixo para garantir seu pedido</p>
-    <a href="#checkout" onclick="document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });" class="bg-white text-red-600 px-6 py-2 rounded-full text-lg font-semibold">Comprar Agora</a>
+  <!-- PROVA SOCIAL -->
+  <section class="p-6 text-center">
+    <h2 class="text-xl font-semibold mb-4">O que nossos clientes dizem</h2>
+    <p>⭐⭐⭐⭐⭐ “Chegou fresquinho, bem embalado e do jeito que pedi.”</p>
+    <p>⭐⭐⭐⭐⭐ “Melhor custo‑benefício que já vi! Sushi bom e preço sensacional.”</p>
+    <p>⭐⭐⭐⭐⭐ “Achei pequeno, mas vem bem servido. Qualidade absurda.”</p>
   </section>
 
-  <footer class="text-center p-4 text-sm text-gray-500">
-    © 2025 Sushi Dojo Delivery. Todos os direitos reservados.
+  <footer class="p-4 text-center text-sm text-gray-500">
+    © 2025 Hokkai Delivery. Todos os direitos reservados.
   </footer>
 
+  <!-- SCRIPT TIMER -->
   <script>
-    function abrirCheckout(produto) {
-      document.getElementById('checkout').classList.remove('hidden');
-      document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
-      document.getElementById('produto').value = produto;
-    }
-
-    function enviarPedido() {
-      const nome = document.getElementById('nome').value;
-      const endereco = document.getElementById('endereco').value;
-      const telefone = document.getElementById('telefone').value;
-      const pagamento = document.getElementById('pagamento').value;
-      const produto = document.getElementById('produto').value;
-
-      fbq('track', 'Purchase');
-
-      document.getElementById('checkout').classList.add('hidden');
-      document.getElementById('resumo').classList.remove('hidden');
-      document.getElementById('resumo').scrollIntoView({ behavior: 'smooth' });
-    }
+    let sec = 13*60+23;
+    const timer = document.getElementById('timer');
+    setInterval(() => {
+      sec--;
+      const m = String(Math.floor(sec/60)).padStart(2,'0');
+      const s = String(sec%60).padStart(2,'0');
+      timer.textContent = m+':' + s;
+      if (sec<=0) sec=0;
+    },1000);
   </script>
 
 </body>
